@@ -1,0 +1,466 @@
+{
+  "id": "dash_259cf1606d37",
+  "schema_version": 1,
+  "name": "Customers",
+  "created_at": "2026-10-01T17:51:48.601513+00:00",
+  "updated_at": "2026-10-01T18:09:29.878242+00:00",
+  "settings": {
+    "canvas_width": 1200,
+    "grid_columns": 12,
+    "row_height_px": 40,
+    "default_query": "customer.sql"
+  },
+  "tabs": [
+    {
+      "id": "tab_cvucugdy",
+      "name": "Overview",
+      "order": 0,
+      "groups": [],
+      "elements": [
+        {
+          "id": "el_mp2s310a",
+          "group_id": null,
+          "layout": {
+            "x": 0,
+            "y": 88,
+            "w": 1296,
+            "h": 77
+          },
+          "style": {
+            "title": {
+              "show": false,
+              "text": "",
+              "font": {
+                "family": "",
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "header_separator": false,
+            "background": true,
+            "padding_h": 0,
+            "padding_v": 0,
+            "text_content": "Customer Filters",
+            "align": "left",
+            "valign": "top",
+            "axis_font": {},
+            "axis_number_format": {},
+            "font": {
+              "family": "",
+              "size": 20,
+              "color": "#1f2430",
+              "bold": false,
+              "italic": false
+            },
+            "background_color": "#ffffff"
+          },
+          "type": "text"
+        },
+        {
+          "id": "el_zfv21lh8",
+          "group_id": null,
+          "layout": {
+            "x": 0,
+            "y": 0,
+            "w": 1293,
+            "h": 80
+          },
+          "style": {
+            "title": {
+              "show": false,
+              "text": "",
+              "font": {
+                "family": "",
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "header_separator": false,
+            "background": false,
+            "padding_h": 0,
+            "padding_v": 0,
+            "text_content": "Customer Tracker",
+            "align": "left",
+            "valign": "middle",
+            "axis_font": {},
+            "axis_number_format": {},
+            "font": {
+              "family": "",
+              "size": 30,
+              "color": "#ffffff",
+              "bold": true,
+              "italic": false
+            },
+            "background_color": "#3981f3"
+          },
+          "type": "text"
+        },
+        {
+          "id": "el_3gl6oema",
+          "group_id": null,
+          "layout": {
+            "x": 0,
+            "y": 199,
+            "w": 636,
+            "h": 299
+          },
+          "style": {
+            "title": {
+              "show": true,
+              "text": "Customers by Country",
+              "font": {
+                "family": "",
+                "size": 20,
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "axis_font": {},
+            "axis_number_format": {},
+            "header_separator": false
+          },
+          "type": "chart",
+          "subtype": "bar",
+          "query": {
+            "mode": "file",
+            "path": "customer.sql"
+          },
+          "field_mapping": {
+            "dimension": "customer_country",
+            "metrics": [
+              {
+                "field": "customer_id",
+                "agg": "COUNT",
+                "alias": "count_customer_id",
+                "axis": "left",
+                "show_label": true,
+                "color": "#2a78d6"
+              }
+            ],
+            "extra_filters": []
+          }
+        },
+        {
+          "id": "el_tjttmlbw",
+          "group_id": null,
+          "layout": {
+            "x": 177,
+            "y": 88,
+            "w": 266,
+            "h": 79
+          },
+          "style": {
+            "title": {
+              "show": true,
+              "text": "Age",
+              "font": {
+                "family": "",
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "axis_font": {},
+            "axis_number_format": {},
+            "header_separator": false,
+            "background": false
+          },
+          "type": "drop_filter",
+          "subtype": "multiselect",
+          "filter": {
+            "dimension": "customer_age",
+            "source": {
+              "mode": "file",
+              "path": "customer.sql"
+            },
+            "default_value": null,
+            "targets": {
+              "elements": [],
+              "groups": []
+            }
+          }
+        },
+        {
+          "id": "el_cegrkzo1",
+          "group_id": null,
+          "layout": {
+            "x": 443,
+            "y": 88,
+            "w": 266,
+            "h": 79
+          },
+          "style": {
+            "title": {
+              "show": true,
+              "text": "Segment",
+              "font": {
+                "family": "",
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "axis_font": {},
+            "axis_number_format": {},
+            "header_separator": false,
+            "background": false
+          },
+          "type": "drop_filter",
+          "subtype": "multiselect",
+          "filter": {
+            "dimension": "customer_segment",
+            "source": {
+              "mode": "file",
+              "path": "customer.sql"
+            },
+            "default_value": null,
+            "targets": {
+              "elements": [],
+              "groups": []
+            }
+          }
+        },
+        {
+          "id": "el_ki5vcjg8",
+          "group_id": null,
+          "layout": {
+            "x": 709,
+            "y": 88,
+            "w": 266,
+            "h": 79
+          },
+          "style": {
+            "title": {
+              "show": true,
+              "text": "Country",
+              "font": {
+                "family": "",
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "axis_font": {},
+            "axis_number_format": {},
+            "header_separator": false,
+            "background": false
+          },
+          "type": "drop_filter",
+          "subtype": "multiselect",
+          "filter": {
+            "dimension": "customer_country",
+            "source": {
+              "mode": "file",
+              "path": "customer.sql"
+            },
+            "default_value": null,
+            "targets": {
+              "elements": [],
+              "groups": []
+            }
+          }
+        },
+        {
+          "id": "el_s7zc7wqx",
+          "group_id": null,
+          "layout": {
+            "x": 975,
+            "y": 88,
+            "w": 266,
+            "h": 79
+          },
+          "style": {
+            "title": {
+              "show": true,
+              "text": "Gender",
+              "font": {
+                "family": "",
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "axis_font": {},
+            "axis_number_format": {},
+            "header_separator": false,
+            "background": false
+          },
+          "type": "drop_filter",
+          "subtype": "multiselect",
+          "filter": {
+            "dimension": "gender",
+            "source": {
+              "mode": "file",
+              "path": "customer.sql"
+            },
+            "default_value": null,
+            "targets": {
+              "elements": [],
+              "groups": []
+            }
+          }
+        },
+        {
+          "id": "el_x0fxyfqm",
+          "group_id": null,
+          "layout": {
+            "x": 0,
+            "y": 511,
+            "w": 636,
+            "h": 299
+          },
+          "style": {
+            "title": {
+              "show": true,
+              "text": "Customers by Segment",
+              "font": {
+                "family": "",
+                "size": 20,
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "axis_font": {},
+            "axis_number_format": {},
+            "header_separator": false
+          },
+          "type": "chart",
+          "subtype": "combined",
+          "query": {
+            "mode": "file",
+            "path": "customer.sql"
+          },
+          "field_mapping": {
+            "dimension": "customer_segment",
+            "metrics": [
+              {
+                "field": "customer_acquisition_cost",
+                "agg": "AVG",
+                "alias": "Avg. Acquisition Cost",
+                "render_as": "line",
+                "axis": "right",
+                "show_label": true,
+                "color": "#000000",
+                "point_shape": "circle",
+                "point_color": "#000000"
+              },
+              {
+                "field": "customer_id",
+                "agg": "COUNT",
+                "alias": "Total Customers",
+                "render_as": "bar",
+                "axis": "left",
+                "show_label": true,
+                "color": "#2a78d6",
+                "point_shape": "circle",
+                "point_color": "#2a78d6"
+              }
+            ],
+            "extra_filters": []
+          }
+        },
+        {
+          "id": "el_g7itsrmg",
+          "group_id": null,
+          "layout": {
+            "x": 649,
+            "y": 511,
+            "w": 635,
+            "h": 299
+          },
+          "style": {
+            "title": {
+              "show": true,
+              "text": "Acquisition Cost by State",
+              "font": {
+                "family": "",
+                "size": 20,
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "axis_font": {},
+            "axis_number_format": {},
+            "header_separator": false,
+            "gradient_low_color": "#d4e1f2",
+            "gradient_high_color": "#14499f",
+            "map_center": [
+              -97.03969102801838,
+              36.60334588675386
+            ],
+            "map_zoom": 2.5937424601000028
+          },
+          "type": "chart",
+          "subtype": "map",
+          "query": {
+            "mode": "file",
+            "path": "customer.sql"
+          },
+          "field_mapping": {
+            "dimension": "customer_state",
+            "metrics": [
+              {
+                "field": "customer_acquisition_cost",
+                "agg": "AVG",
+                "alias": "count_customer_id",
+                "show_label": true
+              }
+            ],
+            "extra_filters": [],
+            "map_mode": "region",
+            "map_scope": "us_states"
+          }
+        },
+        {
+          "id": "el_804wkydo",
+          "group_id": null,
+          "layout": {
+            "x": 648,
+            "y": 199,
+            "w": 636,
+            "h": 304
+          },
+          "style": {
+            "title": {
+              "show": true,
+              "text": "Customer Genders",
+              "font": {
+                "family": "",
+                "size": 20,
+                "color": "#1f2430",
+                "bold": false,
+                "italic": false
+              }
+            },
+            "axis_font": {},
+            "axis_number_format": {},
+            "header_separator": false
+          },
+          "type": "chart",
+          "subtype": "pie",
+          "query": {
+            "mode": "file",
+            "path": "customer.sql"
+          },
+          "field_mapping": {
+            "dimension": "gender",
+            "metrics": [
+              {
+                "field": "customer_id",
+                "agg": "COUNT",
+                "alias": "count_customer_id",
+                "show_label": true
+              }
+            ],
+            "extra_filters": []
+          }
+        }
+      ]
+    }
+  ]
+}

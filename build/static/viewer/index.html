@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/static/viewer/css/viewer.css" />
+</head>
+<body>
+  <header id="toolbar">
+    <div class="toolbar-group">
+      <select id="dashboard-picker"></select>
+      <span id="dashboard-title"></span>
+    </div>
+    <div class="toolbar-group">
+      <a id="edit-link" href="#" target="_blank" rel="noopener">Edit in builder</a>
+    </div>
+  </header>
+
+  <div id="tabs-bar"></div>
+  <main id="viewer-grid" class="viewer-grid"></main>
+  <div id="empty-state" class="empty-hint hidden">No dashboards found. Open the builder to create one.</div>
+
+  <script src="/static/shared/js/vendor/echarts.min.js"></script>
+  <script src="/static/shared/js/api_client.js"></script>
+  <script src="/static/shared/js/elements/kpi.js"></script>
+  <script src="/static/shared/js/elements/chart.js"></script>
+  <script src="/static/shared/js/elements/table.js"></script>
+  <script src="/static/shared/js/elements/dropdown_filter.js"></script>
+  <script src="/static/shared/js/elements/design.js"></script>
+  <script src="/static/viewer/js/viewer.js"></script>
+</body>
+</html>

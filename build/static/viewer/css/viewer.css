@@ -1,0 +1,125 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f6f8;
+  --panel: #ffffff;
+  --border: #dcdfe4;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --accent: #2f6feb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+
+.toolbar-group { display: flex; align-items: center; gap: 10px; }
+
+#dashboard-title { font-weight: 600; }
+#edit-link { font-size: 13px; color: var(--accent); text-decoration: none; }
+#edit-link:hover { text-decoration: underline; }
+
+select {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+#tabs-bar { display: flex; gap: 6px; padding: 12px 16px 0; }
+#tabs-bar button {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+#tabs-bar button.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+.viewer-grid {
+  position: relative;
+  padding: 16px;
+}
+
+.viewer-element {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.viewer-element.no-background { background: transparent; border: none; border-radius: 0; }
+
+.el-header {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+}
+.el-header.no-separator { border-bottom: none; }
+.el-header.header-collapsed {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 5;
+  background: transparent;
+}
+.el-body { flex: 1; overflow: auto; padding: 8px 10px; font-size: 13px; }
+
+.kpi-value { font-size: 32px; font-weight: 700; }
+.kpi-label { color: var(--muted); font-size: 12px; }
+.kpi-metric { display: flex; flex-direction: column; }
+.kpi-metric.kpi-label-left, .kpi-metric.kpi-label-right { flex-direction: row; align-items: baseline; gap: 6px; }
+
+table.data-table { border-collapse: collapse; min-width: 100%; font-size: 12px; }
+table.data-table th, table.data-table td {
+  border-bottom: 1px solid var(--border); padding: 4px 6px; text-align: left;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+table.data-table th { position: relative; }
+table.data-table th.sortable { cursor: pointer; }
+table.data-table th.sortable:hover { background: var(--hover, rgba(0, 0, 0, 0.04)); }
+.col-resize-handle {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 6px;
+  cursor: col-resize; z-index: 2; user-select: none;
+}
+.col-resize-handle:hover, .col-resize-handle:active { background: var(--accent); opacity: 0.4; }
+.table-pager { display: flex; gap: 6px; align-items: center; margin-top: 6px; font-size: 12px; }
+.table-pager button {
+  border: 1px solid var(--border); background: var(--panel); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: 12px;
+}
+
+.filter-multiselect { display: flex; flex-direction: column; gap: 2px; max-height: 140px; overflow-y: auto; }
+
+.ms-dropdown { position: relative; display: inline-block; width: 100%; }
+.ms-toggle { width: 100%; text-align: left; border: 1px solid var(--border); background: var(--panel); border-radius: 6px; padding: 6px 8px; font-size: 13px; cursor: pointer; }
+.ms-toggle:hover { border-color: var(--accent); }
+/* position:fixed (not absolute) - reparented to <body> in JS (see
+   dropdown_filter.js) so it can escape its own element's overflow:hidden
+   clipping and render above whatever sits below it on the dashboard.
+   top/left/width are set inline from the toggle's own bounding rect when
+   opened. */
+.ms-panel {
+  position: fixed; z-index: 1000;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+  padding: 8px; min-width: 160px; max-height: 180px; overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.ms-panel.hidden { display: none; }
+
+.empty-hint { color: var(--muted); font-size: 13px; padding: 40px; text-align: center; }
+.hidden { display: none !important; }
